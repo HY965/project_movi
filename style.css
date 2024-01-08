@@ -1,0 +1,50 @@
+/* row 가로축  x축 정렬값  -> justify-content : spac-around;
+column 세로축 y축 -> align-items : center;
+박스에서 메인이 되는축 교차가되는축 (메인엑시스 , 크로스 엑시스)
+
+flex 는 부모에 가장가까운 자식요소를 정렬 */
+
+/* 미디어 쿼리 브레이크 포인트 */
+
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+ color:black;
+ font-weight: bold;
+ right: 50%;
+}
+
+
+.search button {
+    margin-left: 10px;
+    padding: 4px;
+    cursor: pointer;
+   
+}
+
+.cardList {
+
+    display: flex;
+}
+
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.card {
+    box-shadow: 0 3px 6px rgba(0, 0,0,0.12),0 3px 6px rgba(0,0,0.24);
+    width: 300px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 30px;
+    
+}
