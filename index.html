@@ -7,48 +7,132 @@
   <title>인기영화</title>
   <script src="01.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="reset.css"> -->
 </head>
+<script>
+  fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',options)
+ 	.then(res => res.json())
+    .then(data => console.log(data));
+
+</script>
 
 <body>
-  <header class="search">
+  <!----header-------->
+  <header>
     <h1>인기영화 순위 TOP20</h1>
-
-    <p><input type="text" /></p>
-    <button>검색</button>
   </header>
+  <!---search---->
+    <form class="searchEvent" onsubmit="searchMo(event)">
+    <input type="text" />
+    <button id="searchBtn">검색</button>
+    </form>
 
+  <!---contents------>
   <div class="cardList">
     <div class="card">
-      <img src="" alt="">
-      <h2>영화제목</h2>
-      <p>영화내용</p>
+      <img id="poster_path" src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" alt="">
+      <h2 id="title">The Shawshank Redemption</h2>
+      <p id="overview">Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, 
+        where he puts his accounting skills to work for an amoral warden. During his long stretch in prison,
+        Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.</p>
+    </div>
+    <div class="card" id="02">
+      <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="">
+      <h2>The Godfather</h2>
+      <p>Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, 
+      his youngest son, Michael steps in to take care of the would-be killers, 
+      launching a campaign of bloody revenge.</p>
+    </div>
+    <div class="card" id="03">
+      <img src="https://image.tmdb.org/t/p/w500/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg" alt="">
+      <h2>The Godfather Part II</h2>
+      <p>In the continuing saga of the Corleone crime family, a young Vito Corleone grows up in Sicily and in 1910s New York. In the 1950s, Michael Corleone attempts to expand the family business into Las Vegas, Hollywood and Cuba.</p>
+    </div>
+    <div class="card" id="04">
+      <img src="https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg" alt="">
+      <h2>Schindler's List</h2>
+      <p>The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.</p>
+    </div>
+    <div class="card" id="05">
+      <img src="https://image.tmdb.org/t/p/w500/lfRkUr7DYdHldAqi3PwdQGBRBPM.jpg" alt="">
+      <h2>Dilwale Dulhania Le Jayenge</h2>
+      <p>Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.</p>
+    </div>
+    <div class="card" id="06">
+      <img src="https://image.tmdb.org/t/p/w500/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg" alt="">
+      <h2>12 Angry Men</h2>
+      <p>The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.</p>
+    </div>
+    <div class="card" id="07">
+      <img src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="">
+      <h2>Spirited Away</h2>
+      <p>A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.</p>
+    </div>
+    <div class="card" id="08">
+      <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="">
+      <h2>The Dark Knight</h2>
+      <p>Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.</p>
+    </div>
+    <div class="card" id="09">
+      <img src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="">
+      <h2>Parasite</h2>
+      <p>All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.</p>
+    </div>
+    <div class="card" id="10">
+      <img src="https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg" alt="">
+      <h2>The Green Mile</h2>
+      <p>A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.</p>
+    </div>
+    <div class="card" id="11">
+      <img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg" alt="">
+      <h2>Your Name.</h2>
+      <p>High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other.</p>
+    </div>
+    <div class="card" id="12">
+      <img src="https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" alt="">
+      <h2>Pulp Fiction</h2>
+      <p>A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.</p>
+    </div>
+    <div class="card" id="13">
+      <img src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" alt="">
+      <h2>The Lord of the Rings: The Return of the King</h2>
+      <p>Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm.</p>
+    </div>
+    <div class="card" id="14">
+      <img src="https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg" alt="">
+      <h2>Forrest Gump</h2>
+      <p>A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.</p>
+    </div>
+    <div class="card" id="15">
+      <img src="https://image.tmdb.org/t/p/w500/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg" alt="">
+      <h2>The Good, the Bad and the Ugly</h2>
+      <p>While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.</p>
+    </div>
+    <div class="card" id="16">
+      <img src="https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg" alt="">
+      <h2>GoodFellas</h2>
+      <p>The true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is adopted by neighbourhood gangsters at an early age and climbs the ranks of a Mafia family under the guidance of Jimmy Conway.</p>
+    </div>
+    <div class="card" id="17">
+      <img src="https://image.tmdb.org/t/p/w500/8OKmBV5BUFzmozIC3pPWKHy17kx.jpg" alt="">
+      <h2>Seven Samurai</h2>
+      <p>A samurai answers a village's request for protection after he falls on hard times. The town needs protection from bandits, so the samurai gathers six others to help him teach the people how to defend themselves, and the villagers provide the soldiers with food.</p>
+    </div>
+    <div class="card" id="18">
+      <img src="https://image.tmdb.org/t/p/w500/6tEJnof1DKWPnl5lzkjf0FVv7oB.jpg" alt="">
+      <h2>Life Is Beautiful</h2>
+      <p>A touching story of an Italian book seller of Jewish ancestry who lives in his own little fairy tale. His creative and happy life would come to an abrupt halt when his entire family is deported to a concentration camp during World War II. While locked up he tries to convince his son that the whole thing is just a game.</p>
+    </div>
+    <div class="card" id=>
+      <img src="https://image.tmdb.org/t/p/w500/k9tv1rXZbOhH7eiCk378x61kNQ1.jpg" alt="">
+      <h2>Grave of the Fireflies</h2>
+      <p>In the final months of World War II, 14-year-old Seita and his sister Setsuko are orphaned when their mother is killed during an air raid in Kobe, Japan. After a falling out with their aunt, they move into an abandoned bomb shelter. With no surviving relatives and their emergency rations depleted, Seita and Setsuko struggle to survive.</p>
     </div>
     <div class="card">
-      <img src="" alt="">
-      <h2>영화제목</h2>
-      <p>영화내용</p>
+      <img src="https://image.tmdb.org/t/p/w500/8SRUfRUi6x4O68n0VCbDNRa6iGL.jpg" alt="">
+      <h2>Cinema Paradiso</h2>
+      <p>A filmmaker recalls his childhood, when he fell in love with the movies at his village's theater and formed a deep friendship with the theater's projectionist.</p>
     </div>
-    <div class="card">
-      <img src="" alt="">
-      <h2>영화제목</h2>
-      <p>영화내용</p>
-    </div>
-
-    <div class="card">
-      <img src="" alt="">
-      <h2>영화제목</h2>
-      <p>영화내용</p>
-    </div>
-
-    <div class="card">
-      <img src="" alt="">
-      <h2>영화제목</h2>
-      <p>영화내용</p>
-    </div>
-
-
-
   </div>
 
 
